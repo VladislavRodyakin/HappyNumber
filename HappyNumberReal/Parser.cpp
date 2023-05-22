@@ -11,24 +11,25 @@ Parser::Parser(std::istream& _input):input{ _input } {
 }
 
 Parser::~Parser() {
-	//input.close();
 }
 
 int Parser::getNext() {
 	std::string out;
 	if (!(std::getline(input, out)))
 		return -1;
-		int output = stoi(out);
-		if (output <= 0)
-			throw std::invalid_argument("Invalid line ");//также вывести 
-		return output;
-		/*try {
-		}наружу
-		catch (std::exception& exc) {
-			std::cerr << exc.what();
-		}*/
+	int output = stoi(out);
+	if (output <= 0) {
+		throw std::invalid_argument("Invalid line: " + output);
+	}
+	return output;
+	/*try {
+	}наружу
+	catch (std::exception& exc) {
+		std::cerr << exc.what();
+	}*/
 }
 
-bool Parser::check_valid(int num) {
-
-}
+//вроде не надо
+//bool Parser::check_valid(int num) {
+//
+//}
