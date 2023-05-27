@@ -21,6 +21,7 @@ int main(int argc, char* argv[]){
         int checking_num = par.getNext();
         while (checking_num != -1) {
             std::cout << checking_num << " - " << Checker::check_happines(checking_num) << std::endl;
+            checking_num = par.getNext();
         }// посмотреть iomnip для вывода t/f (уже)
     }
     catch (const std::exception& e) {
