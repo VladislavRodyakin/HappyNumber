@@ -17,6 +17,8 @@ int Parser::getNext() {
 	std::string out;
 	if (!(std::getline(input, out)))
 		return -1;
+	if (out == "")
+		;
 	int output = stoi(out);
 	if (output <= 0) {
 		throw std::invalid_argument("Invalid line: " + output);
